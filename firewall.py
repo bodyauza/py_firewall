@@ -6,22 +6,6 @@ from netfilterqueue import NetfilterQueue
 import scapy.all as scapy
 import sqlite3
 
-"""
-
-    Установка необходимых пакетов:
-
-    sudo apt-get install python3-pip
-    sudo apt-get install iptables-dev libnetfilter-queue-dev
-    pip3 install NetfilterQueue
-    
-    Настройка iptables для перенаправления пакетов в очередь nfqueue.
-    Эти команды перенаправляют все входящие и исходящие пакеты в очередь номер 1:
-    
-    sudo iptables -A INPUT -j NFQUEUE --queue-num 1
-    sudo iptables -A OUTPUT -j NFQUEUE --queue-num 1
-
-"""
-
 # Подключение к базе данных SQLite
 conn = sqlite3.connect('harmful_IP.db')
 
